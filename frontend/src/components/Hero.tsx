@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ArrowRight, Users, Building2, Briefcase } from 'lucide-react';
 
+
+
 const Hero = () => {
   const [parametro, setParametro] = useState(null);
 
