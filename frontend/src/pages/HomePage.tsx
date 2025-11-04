@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import JobList from '../components/JobList';
-import CompanyForm from '../components/CompanyForm';
-import StudentSection from '../components/StudentSection';
+/*import CompanyForm from '../components/CompanyForm';
+import StudentSection from '../components/StudentSection';*/
 import Stats from '../components/Stats';
 import Footer from '../components/Footer';
 

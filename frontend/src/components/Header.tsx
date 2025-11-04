@@ -1,14 +1,14 @@
-import React from 'react';
-import { Briefcase, Building2, GraduationCap, Menu, X } from 'lucide-react';
+import { Link, useLocation } from "react-router-dom";
+import { Briefcase, Building2, GraduationCap,  Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../assets/logoIPL.png';
-
+/*
 interface HeaderProps {
   activeSection: 'jobs' | 'companies' | 'students';
   setActiveSection: (section: 'jobs' | 'companies' | 'students') => void;
-}
+}*/
 
-const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
+const Header/*: React.FC<HeaderProps>*/ = (/*{ activeSection, setActiveSection }*/) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigationItems = [
@@ -40,20 +40,31 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-1">
-            {navigationItems.map(({ id, label, icon: Icon }) => (
-              <button
-                key={id}
-                onClick={() => setActiveSection(id)}
-                className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center space-x-2 ${
-                  activeSection === id
-                    ? 'bg-azul-ipl text-white shadow-lg transform scale-105'
-                    : 'text-azul-oscuro-ipl hover:bg-azul-ipl hover:text-white hover:shadow-md hover:transform hover:scale-105'
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                <span>{label}</span>
-              </button>
-            ))}
+
+          <Link to="/"
+           className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center space-x-2  text-azul-oscuro-ipl hover:bg-azul-ipl hover:text-white hover:shadow-md hover:transform hover:scale-105` }
+           >
+             <Briefcase className="w-4 h-4" />
+             Oportunidades Laborales
+          </Link>
+          <Link to="/companies"
+           className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center space-x-2  text-azul-oscuro-ipl hover:bg-azul-ipl hover:text-white hover:shadow-md hover:transform hover:scale-105` }
+           >
+             <Building2 className="w-4 h-4" />
+            Para Empresas
+          </Link>
+
+          <Link to="/students"
+           className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center space-x-2  text-azul-oscuro-ipl hover:bg-azul-ipl hover:text-white hover:shadow-md hover:transform hover:scale-105` }
+           >
+             <GraduationCap className="w-4 h-4" />
+             Para Estudiantes
+          </Link>
+
+
+
+
+          
           </nav>
 
           {/* Mobile menu button */}
